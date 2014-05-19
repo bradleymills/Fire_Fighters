@@ -31,7 +31,7 @@
   }
 // this is where i edit the menu text
   function startGame() {
-    var screen = new GameScreen("Fire Defender","press space to start",
+    var screen = new GameScreen("Fire Fighter","press space to start",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
