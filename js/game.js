@@ -80,7 +80,7 @@ Alien.prototype.step = function(dt) {
 //this is where u change the fire rate of the aliens
 Alien.prototype.fireSometimes = function() {
       if(Math.random()*100 < 10) {
-        
+                //This is where i can change the missles that the aliens will fire
         this.board.addSprite('missile',this.x + this.w/2 - Sprites.map.missile.w/2,
                                       this.y + this.h, 
                                      { dy: 100 });
@@ -112,7 +112,7 @@ Player.prototype.step = function(dt) {
 
   if(Game.keys['fire'] && this.reloading <= 0 && this.board.missiles < 12) {
     GameAudio.play('fire');
-    this.board.addSprite('missile',
+    this.board.addSprite('missile',                     //this is where i can change the missles player will fire 
                           this.x + this.w/2 - Sprites.map.missile.w/2,
                           this.y-this.h,
                           { dy: -100, player: true });
