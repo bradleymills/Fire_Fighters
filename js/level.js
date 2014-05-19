@@ -31,14 +31,14 @@
   }
 // this is where i edit the menu text
   function startGame() {
-    var screen = new GameScreen("Alien Invaders","press space to start",
+    var screen = new GameScreen("Fire Defender","press space to start",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
     Game.loadBoard(screen);
     Game.loop();
   }
-// this is where you edit the game over text
+// this is where you edit the game over text.
   function endGame() {
     var screen = new GameScreen("Game Over","(press space to restart)",
                                  function() {
@@ -47,7 +47,7 @@
     Game.loadBoard(screen);
   }
 
-
+// this is where i add the you win screen.
   function winGame() {
     var screen = new GameScreen("You Win!","(press space to restart)",
                                  function() {
@@ -55,7 +55,7 @@
                                  });
     Game.loadBoard(screen);
   }
-//this is where i change the sound files//
+//this is where i change the sound files
   $(function() {
     GameAudio.load({ 'fire' : 'media/laser.ogg', 'die' : 'media/explosion.ogg' }, 
                    function() { 
