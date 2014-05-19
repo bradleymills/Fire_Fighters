@@ -38,7 +38,7 @@
     Game.loadBoard(screen);
     Game.loop();
   }
-
+// this is where you edit the game over text
   function endGame() {
     var screen = new GameScreen("Game Over","(press space to restart)",
                                  function() {
