@@ -68,10 +68,10 @@ Alien.prototype.step = function(dt) {
     if(this.y == this.flock.max_y[this.x]) {
       this.fireSometimes();
     }
-    //this is where i change the grame count i changed it to 3 frames//
+    //this is where i change the frame count of the aliens i changed it to 2 frames//
     this.x += this.mx;
     this.mx = 0;
-    this.frame = (this.frame+1) % 3;
+    this.frame = (this.frame+1) % 2;
     if(this.x > Game.width - Sprites.map.alien1.w * 2) this.flock.hit = -1;
     if(this.x < Sprites.map.alien1.w) this.flock.hit = 1;
   }
