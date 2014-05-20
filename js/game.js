@@ -6,7 +6,7 @@ var AlienFlock = function AlienFlock() {
   this.speed = 10;
 
   this.draw = function() {};
-    //This is where you load next level or if there are no more levels to be loaded it will load up the win screen.
+    //This function controls the loading of the next level in the game, if there are no more levels then the game is 'won'//
   this.die = function() {
     if(Game.board.nextLevel()) {
       Game.loadBoard(new GameBoard(Game.board.nextLevel())); 

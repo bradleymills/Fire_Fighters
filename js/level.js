@@ -32,8 +32,22 @@
           [0,0,1,1,1,1,1,1,1,1,0],
           [0,0,1,1,1,1,1,1,1,1,0],
           [0,0,1,1,1,1,1,1,1,1,0],
+          [0,0,1,1,1,1,1,1,1,1,0]],
+    4:    [[0,0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,0,0,0,0,0,0,0,0],
+          [0,1,0,0,1,0,1,0,0,1,0],
+          [0,0,0,0,0,0,0,0,0,0,0],
+          [0,0,0,2,2,2,0,0,0,0,0],
+          [0,0,2,2,2,2,2,2,2,2,0],
+          [0,0,2,2,2,2,2,2,2,2,0],
+          [0,0,1,1,1,1,1,1,1,1,0],
+          [0,0,1,1,1,1,1,1,1,1,0],
+          [2,2,1,1,1,2,2,1,1,1,2],
           [0,0,1,1,1,1,1,1,1,1,0]]};
 
+
+
+//added more levels to the game increasing number of enemies per level//
   var spriteData = {
     'alien1': { sx: 0,  sy: 0,  w: 11, h: 18, cls: Alien, frames: 5 },
     'alien2': { sx: 0,  sy: 20, w: 11, h: 18, cls: Alien, frames: 5 },
@@ -51,7 +65,7 @@
   }
 // this is where you edit the game over text.
   function endGame() {
-    var screen = new GameScreen("Game Over","(press space to restart)",
+    var screen = new GameScreen("Burn Out","(press space to restart)",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
