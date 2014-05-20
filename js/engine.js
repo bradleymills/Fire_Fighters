@@ -32,14 +32,14 @@ var Game = new function() {
 
 var Sprites = new function() {
   this.map = { }; 
-//this is where i locate my aliens image file//
+//this is where i locate my sprite files//
   this.load = function(sprite_data,callback) { 
     this.map = sprite_data;
     this.image = new Image();
     this.image.onload = callback;
     this.image.src = 'images/sprites2.png';
   };
-
+//this is where the sprites are drawn up from i think//
   this.draw = function(canvas,sprite,x,y,frame) {
     var s = this.map[sprite];
     if(!frame) frame = 0;
@@ -117,7 +117,7 @@ var GameBoard = function GameBoard(level_number) {
     return !((o1.y+o1.h-1<o2.y) || (o1.y>o2.y+o2.h-1) ||
              (o1.x+o1.w-1<o2.x) || (o1.x>o2.x+o2.w-1));
   };
-
+//This function detects collision i think//
   this.collide = function(obj) {
     return this.detect(function() {
       if(obj != this && !this.invulnrable)
@@ -125,12 +125,13 @@ var GameBoard = function GameBoard(level_number) {
     });
   };
 
+    //this is how the game loads each level with sprites and the player//
   this.loadLevel = function(level) {
     this.objects = [];
     this.player = this.addSprite('player', // Sprite
                                  Game.width/2, // X
                                  Game.height - Sprites.map['player'].h - 10); // Y
-
+//this determins where the enemy sprites spawn from?//
     var flock = this.add(new AlienFlock());
     for(var y=0,rows=level.length;y<rows;y++) {
       for(var x=0,cols=level[y].length;x<cols;x++) {
@@ -144,7 +145,7 @@ var GameBoard = function GameBoard(level_number) {
       }
     }
   };
-
+//this determins what happens when a level is complete//
   this.nextLevel = function() { 
     return Game.level_data[level_number + 1] ? (level_number + 1) : false 
   };
