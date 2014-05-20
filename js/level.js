@@ -74,13 +74,13 @@
 
 // this is where i add the you win screen.
   function winGame() {
-    var screen = new GameScreen("You Win!","(press space to restart)",
+    var screen = new GameScreen("You Saved The Day!","(press space to restart)",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
     Game.loadBoard(screen);
   }
-//this is where i change the sound files
+//this is where i change the sound files from laser noises to match current theme
   $(function() {
     GameAudio.load({ 'fire' : 'media/laser.ogg', 'die' : 'media/explosion.ogg' }, 
                    function() { 
