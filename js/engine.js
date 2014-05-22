@@ -37,7 +37,7 @@ var Sprites = new function() {
     this.map = sprite_data;
     this.image = new Image();
     this.image.onload = callback;
-    this.image.src = 'images/sprites2.png';
+    this.image.src = 'images/spritesnew.png';
   };
 //this is where the sprites are drawn up from i think//
   this.draw = function(canvas,sprite,x,y,frame) {
