@@ -68,6 +68,7 @@ var GameScreen = function GameScreen(text,text2,callback) {
 
 var GameBoard = function GameBoard(level_number) {
   this.removed_objs = [];
+    //this changes the rate of fire//
   this.missiles = 0;
   this.level = level_number;
   var board = this;
@@ -109,7 +110,7 @@ var GameBoard = function GameBoard(level_number) {
       if(idx != -1) this.objects.splice(idx,1);
     }
   };
-//this draws the canvas for the background//
+
   this.render = function(canvas) {
     canvas.clearRect(0,0,Game.width,Game.height);
     this.iterate(function() { this.draw(canvas); });

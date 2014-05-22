@@ -95,7 +95,7 @@ Player.prototype.draw = function(canvas) {
    Sprites.draw(canvas,'player',this.x,this.y,this.frame);
 }
 
-
+//this determins what happens when the player dies//
 Player.prototype.die = function() {
   GameAudio.play('die');
   Game.callbacks['die']();
