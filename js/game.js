@@ -100,7 +100,7 @@ Player.prototype.die = function() {
   GameAudio.play('die');
   Game.callbacks['die']();
 }
-
+//this changes the controlls for the player//
 Player.prototype.step = function(dt) {
   if(Game.keys['left']) { this.x -= 100 * dt; }
   if(Game.keys['right']) { this.x += 100 * dt; }
