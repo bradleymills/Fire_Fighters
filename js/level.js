@@ -57,7 +57,9 @@
     'alien4': { sx: 69,  sy: 3.1, w: 16, h: 14, cls: Alien, frames: 2 },
     'alien5': { sx: 28,  sy: 20, w: 19, h: 17, cls: Alien, frames: 2 },
     'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
-    'missile': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Missile }
+    'missile': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Missile },
+   // 'missile2': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile },//
+      
     
   }
 // this is where i edit the menu text

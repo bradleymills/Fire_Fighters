@@ -51,7 +51,7 @@ var GameScreen = function GameScreen(text,text2,callback) {
   this.step = function(dt) {
     if(Game.keys['fire'] && callback) callback();
   };
-
+//this changes the canvas of the game and the fonts used//
   this.render = function(canvas) {
     canvas.clearRect(0,0,Game.width,Game.height);
     canvas.font = "bold 40px arial";
@@ -107,7 +107,7 @@ var GameBoard = function GameBoard(level_number) {
       if(idx != -1) this.objects.splice(idx,1);
     }
   };
-
+//this draws the canvas for the background//
   this.render = function(canvas) {
     canvas.clearRect(0,0,Game.width,Game.height);
     this.iterate(function() { this.draw(canvas); });
@@ -152,7 +152,7 @@ var GameBoard = function GameBoard(level_number) {
  
   this.loadLevel(Game.level_data[level_number]);
 };
-
+//this changes the audio of the game//
 var GameAudio = new function() {
   this.load_queue = [];
   this.loading_sounds = 0;

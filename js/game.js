@@ -49,7 +49,7 @@ var Alien = function Alien(opts) {
   this.frame = 0;
   this.mx = 0;
 }
-
+//this changes the drawing of the aliens//
 Alien.prototype.draw = function(canvas) {
   Sprites.draw(canvas,this.name,this.x,this.y,this.frame);
 }
@@ -60,7 +60,7 @@ Alien.prototype.die = function() {
   this.flock.speed += 1;  //here is where there is a rule added where when alien dies it increseas the speed of the alien flock//
   this.board.remove(this);
 }
-
+//this changes the frame rate of the 'aliens'//
 Alien.prototype.step = function(dt) {
   this.mx += dt * this.flock.dx;
   this.y += this.flock.dy;
@@ -80,7 +80,7 @@ Alien.prototype.step = function(dt) {
 //this is where u change the fire rate of the aliens
 Alien.prototype.fireSometimes = function() {
       if(Math.random()*100 < 10) {
-                //This is where i can change the missles that the aliens will fire
+                //This is where i can change the missles that the aliens will fire need to change missle to missle 2//
         this.board.addSprite('missile',this.x + this.w/2 - Sprites.map.missile.w/2,
                                       this.y + this.h, 
                                      { dy: 100 });
@@ -90,9 +90,9 @@ Alien.prototype.fireSometimes = function() {
 var Player = function Player(opts) { 
   this.reloading = 0;
 }
-
+//this draws the player avatar//
 Player.prototype.draw = function(canvas) {
-   Sprites.draw(canvas,'player',this.x,this.y);
+   Sprites.draw(canvas,'player',this.x,this.y,this.frame);
 }
 
 
