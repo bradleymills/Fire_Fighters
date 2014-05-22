@@ -8,10 +8,12 @@ var Game = new function() {
     this.width = $(this.canvas_elem).attr('width');
     this.height= $(this.canvas_elem).attr('height');
 
+      //this recognises if a key is being pressed and provides a function//
     $(window).keydown(function(event) {
       if(KEY_CODES[event.keyCode]) Game.keys[KEY_CODES[event.keyCode]] = true;
     });
 
+      //this recognises if a key is not being pressed//
     $(window).keyup(function(event) {
       if(KEY_CODES[event.keyCode]) Game.keys[KEY_CODES[event.keyCode]] = false;
     });
@@ -22,7 +24,7 @@ var Game = new function() {
   };
 
   this.loadBoard = function(board) { Game.board = board; };
-//this is the bit that makes it go faster i changed it from 30 to 12
+//this changes the game speed, i changed it from 30 to 12
   this.loop = function() { 
     Game.board.step(30/1000); 
     Game.board.render(Game.canvas);
