@@ -48,11 +48,15 @@
 
 
 //added more levels to the game increasing number of enemies per level//
+
+//this is how you incorporate the sprite sheet into the game//
   var spriteData = {
     'alien1': { sx: 0,  sy: 0,  w: 13, h: 18, cls: Alien, frames: 2 },
-    'alien2': { sx: 1,  sy: 20, w: 12, h: 18, cls: Alien, frames: 2 },
-    'player': { sx: 0,  sy: 36, w: 26, h: 17, cls: Player },
+    'alien2': { sx: 2,  sy: 20, w: 12, h: 17, cls: Alien, frames: 2 },
+    'alien3': { sx: 32.9,  sy: 1, w: 16.1, h: 15.7, cls: Alien, frames: 2 },
+    'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
     'missile': { sx: 0,  sy: 86, w: 3,  h: 14, cls: Missile }
+    
   }
 // this is where i edit the menu text
   function startGame() {
