@@ -20,7 +20,7 @@ var Game = new function() {
     this.callbacks = callbacks;
     Sprites.load(sprite_data,this.callbacks['start']);
   };
-
+// comments random bo
   this.loadBoard = function(board) { Game.board = board; };
 //this is the bit that makes it go faster i changed it from 30 to 10
   this.loop = function() { 
