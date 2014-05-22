@@ -20,13 +20,13 @@ var Game = new function() {
     this.callbacks = callbacks;
     Sprites.load(sprite_data,this.callbacks['start']);
   };
-// comments random bo
+
   this.loadBoard = function(board) { Game.board = board; };
-//this is the bit that makes it go faster i changed it from 30 to 10
+//this is the bit that makes it go faster i changed it from 30 to 12
   this.loop = function() { 
     Game.board.step(30/1000); 
     Game.board.render(Game.canvas);
-    setTimeout(Game.loop,15);
+    setTimeout(Game.loop,12);
   };
 };
 
