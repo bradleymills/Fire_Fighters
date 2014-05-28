@@ -48,7 +48,7 @@ var Sprites = new function() {
     canvas.drawImage(this.image, s.sx + frame * s.w, s.sy, s.w, s.h, x,y, s.w, s.h);
   };
 }
-
+//this function starts the game//
 var GameScreen = function GameScreen(text,text2,callback) {
   this.step = function(dt) {
     if(Game.keys['fire'] && callback) callback();
@@ -127,6 +127,7 @@ var GameBoard = function GameBoard(level_number) {
        return board.collision(obj,this) ? this : false;
     });
   };
+    
 
     //this is how the game loads each level with sprites and the player//
   this.loadLevel = function(level) {
@@ -203,4 +204,3 @@ var GameAudio = new function() {
     }
   };
 };
-
