@@ -68,7 +68,7 @@
     'alien3': { sx: 32.9,  sy: 1, w: 17, h: 15.7, cls: Alien, frames: 2 },
     'alien4': { sx: 69,  sy: 3.1, w: 16, h: 14, cls: Alien, frames: 2 },
     'alien5': { sx: 28,  sy: 20, w: 19, h: 17, cls: Alien, frames: 2 },
-         'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
+     'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
     'missile': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Missile },
    // 'missile2': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile },//
       
@@ -90,6 +90,7 @@ function loseLifeScreen() {
 
   }
 
+
   
 // this is where i edit the menu text
   function startGame() {
@@ -99,20 +100,20 @@ function loseLifeScreen() {
                                      
                                  });
     Game.loadBoard(screen);
+      Game.loop();
     
   }
 // this is where you edit the game over text.
   function endGame() {
     var screen = new GameScreen("Burn Out","(press space to restart)",
-                                 function() {
-                              Game.loadBoard(new GameBoard(1));
-                              document.getElementById('lives').innerHTML="LIVES : " + lives;
+                           function() {
+                                     Game.loadBoard(new GameBoard(1));
+                                      document.getElementById('lives').innerHTML="LIVES : " + lives;
                                       
                                      score = 0;
-                                     document.getElementById('score').innerHTML="SCORE : " score;
+                                     document.getElementById('score').innerHTML="SCORE : " + score;
                                      
                             
-                                     
                                  });
     Game.loadBoard(screen);
   }
