@@ -1,7 +1,10 @@
-var Game = new function() {                                                                  
+var Game = new function() {    
+    
+    //this determins the control keys for the game//
   var KEY_CODES = { 37:'left', 39:'right', 32 :'fire' };
   this.keys = {};
 
+    //this function starts the canvas
   this.initialize = function(canvas_dom,level_data,sprite_data,callbacks) {
     this.canvas_elem = $(canvas_dom)[0];
     this.canvas = this.canvas_elem.getContext('2d');
@@ -23,6 +26,7 @@ var Game = new function() {
     Sprites.load(sprite_data,this.callbacks['start']);
   };
 
+    //this function starts the game 
   this.loadBoard = function(board) { Game.board = board; };
 //this changes the game speed, i changed it from 30 to 12
   this.loop = function() { 
@@ -34,21 +38,21 @@ var Game = new function() {
 
 var Sprites = new function() {
   this.map = { }; 
-//this is where i locate my sprite files//
+//this is where my sprite files are located//
   this.load = function(sprite_data,callback) { 
     this.map = sprite_data;
     this.image = new Image();
     this.image.onload = callback;
     this.image.src = 'images/spritesnew.png';
   };
-//this is where the sprites are drawn up from i think//
+
   this.draw = function(canvas,sprite,x,y,frame) {
     var s = this.map[sprite];
     if(!frame) frame = 0;
     canvas.drawImage(this.image, s.sx + frame * s.w, s.sy, s.w, s.h, x,y, s.w, s.h);
   };
 }
-//this function starts the game//
+//this function starts the game with the fire key
 var GameScreen = function GameScreen(text,text2,callback) {
   this.step = function(dt) {
     if(Game.keys['fire'] && callback) callback();
@@ -120,7 +124,7 @@ var GameBoard = function GameBoard(level_number) {
     return !((o1.y+o1.h-1<o2.y) || (o1.y>o2.y+o2.h-1) ||
              (o1.x+o1.w-1<o2.x) || (o1.x>o2.x+o2.w-1));
   };
-//This function detects collision i think//
+//This function detects collision
   this.collide = function(obj) {
     return this.detect(function() {
       if(obj != this && !this.invulnrable)

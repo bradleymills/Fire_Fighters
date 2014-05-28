@@ -74,25 +74,50 @@
       
     
   }
+  //this function controlls what happens when the player loses a life//
+function loseLife(){
+  if(this.Player) lives = lives -1;
+    document.getElementById('lives').innerHTML="LIVES : " + lives; 
+  }
+
+
+function loseLifeScreen() {
+    var screen = new GameScreen("SCORE : "+score+" ","you have "+lives+" lives left",
+                                 function() {
+                                     Game.loadBoard(new GameBoard(1));
+                                 });
+    Game.loadBoard(screen);
+
+  }
+
+  
 // this is where i edit the menu text
   function startGame() {
     var screen = new GameScreen("Fire Fighter","press space to start",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
+                                     
                                  });
     Game.loadBoard(screen);
-    Game.loop();
+    
   }
 // this is where you edit the game over text.
   function endGame() {
     var screen = new GameScreen("Burn Out","(press space to restart)",
                                  function() {
-                                     Game.loadBoard(new GameBoard(1));
+                              Game.loadBoard(new GameBoard(1));
+                              document.getElementById('lives').innerHTML="LIVES : " + lives;
+                                      
+                                     score = 0;
+                                     document.getElementById('score').innerHTML="SCORE : " score;
+                                     
+                            
+                                     
                                  });
     Game.loadBoard(screen);
   }
 
-// this is where i add the you win screen.
+// this is where i add the you win screen. if the player completes the game
   function winGame() {
     var screen = new GameScreen("You Saved The Day!","(press space to restart)",
                                  function() {
@@ -105,7 +130,8 @@
     GameAudio.load({ 'fire' : 'media/waterfire.ogg', 'die' : 'media/explosion.ogg' }, 
                    function() { 
                        Game.initialize("#gameboard", levelData, spriteData,
-                                      { "start": startGame,
+                                      { "start" : startGame,
+                                       "loseLife" : loseLifeScreen,
                                         "die"  : endGame,
                                         "win"  : winGame });
                    });

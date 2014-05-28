@@ -1,4 +1,15 @@
 
+
+//this variable determins the score as 0 for starting the game
+var score = 0;
+
+//this variable determins the number of total lifes you recieve throughout the game
+
+var lives = 3;
+
+
+
+
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
   this.dx = 10; this.dy = 0;
@@ -8,6 +19,8 @@ var AlienFlock = function AlienFlock() {
   this.draw = function() {};
     //This function controls the loading of the next level in the game, if there are no more levels then the game is 'won'//
   this.die = function() {
+      this.alive = false;
+      
     if(Game.board.nextLevel()) {
       Game.loadBoard(new GameBoard(Game.board.nextLevel())); 
     } else {
@@ -59,6 +72,9 @@ Alien.prototype.die = function() {
   GameAudio.play('die');
   this.flock.speed += 1;  //here is where there is a rule added where when alien dies it increseas the speed of the alien flock//
   this.board.remove(this);
+     score = score +1;
+    document.getElementById('score').innerHTML="SCORE : " + score;
+    
 }
 //this changes the frame rate of the 'aliens'//
 Alien.prototype.step = function(dt) {
@@ -79,7 +95,7 @@ Alien.prototype.step = function(dt) {
 }
 //this is where u change the fire rate of the aliens
 Alien.prototype.fireSometimes = function() {
-      if(Math.random()*100 < 10) {
+      if(Math.random()*100 < 9) {
                 //This is where i can change the missles that the aliens will fire need to change missle to missle 2//
         this.board.addSprite('missile',this.x + this.w/2 - Sprites.map.missile.w/2,
                                       this.y + this.h, 
@@ -92,19 +108,31 @@ var Player = function Player(opts) {
 }
 //this draws the player avatar//
 Player.prototype.draw = function(canvas) {
-   Sprites.draw(canvas,'player',this.x,this.y,this.frame);
+   Sprites.draw(canvas,'player',this.x,this.y);
+                //,this.frame);
 }
 
-//this determins what happens when the player dies//
+//this determins what happens when the player dies or loses a life //
 Player.prototype.die = function() {
   GameAudio.play('die');
-  Game.callbacks['die']();
+  Game.callbacks['loseLife']();
+    loseLife();
+    loseLifeScreen();
+    
+    if(lives <=0){
+       Game.callbacks['die']();
+    lives = 3;
+    
+};
+
+
 }
 //this changes the controlls for the player//
 Player.prototype.step = function(dt) {
   if(Game.keys['left']) { this.x -= 100 * dt; }
   if(Game.keys['right']) { this.x += 100 * dt; }
-
+//change to add up and down keys//
+    
   if(this.x < 0) this.x = 0;
   if(this.x > Game.width-this.w) this.x = Game.width-this.w;
 
