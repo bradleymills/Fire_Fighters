@@ -150,12 +150,12 @@ Player.prototype.step = function(dt) {
   return true;
 }
 
-
+//this variable declairs the funtion of the missle
 var Missile = function Missile(opts) {
    this.dy = opts.dy;
    this.player = opts.player;
 }
-
+//this decides where the missle is drawn up from by the co ordinates on the sprite sheet
 Missile.prototype.draw = function(canvas) {
    Sprites.draw(canvas,'missile',this.x,this.y);
 }
@@ -163,6 +163,8 @@ Missile.prototype.draw = function(canvas) {
 Missile.prototype.step = function(dt) {
    this.y += this.dy * dt;
 
+    
+    //this variable tells the game to kill an enemy if there is a missle collision
    var enemy = this.board.collide(this);
    if(enemy) { 
      enemy.die();
