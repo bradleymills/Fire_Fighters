@@ -1,0 +1,38 @@
+body{
+   
+    background-color: red;
+   
+    
+}
+
+#gameboard { 
+  display: block;
+
+}
+
+#game-wrapper { 
+    margin:0 auto; 
+    width: 500px;
+
+}
+
+#game-wrapper #lives {
+    color: white;
+    font-weight: 50;
+    font-family: arial bold;
+    font-size: 40px;
+    text-align: left;
+    float: left;
+    padding: 10;
+}
+
+#game-wrapper #score {
+    color: white;
+    font-weight: 50;
+    font-family: arial bold;
+    font-size: 40px;
+    text-align: right;
+    float: right;
+    padding: 10;
+    
+}
