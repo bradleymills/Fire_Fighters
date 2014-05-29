@@ -1,7 +1,7 @@
 var Game = new function() {    
     
     //this determins the control keys for the game//
-  var KEY_CODES = { 37:'left', 39:'right', 32 :'fire' };
+  var KEY_CODES = { 37:'left', 39:'right', 32 :'fire', 38:'up', 40:'down'};
   this.keys = {};
 
     //this function starts the canvas
@@ -36,9 +36,10 @@ var Game = new function() {
   };
 };
 
+
 var Sprites = new function() {
   this.map = { }; 
-//this is where my sprite files are located//
+//this is where my sprite files are located and i am able to make changes to the sprite file
   this.load = function(sprite_data,callback) { 
     this.map = sprite_data;
     this.image = new Image();
@@ -139,6 +140,7 @@ var GameBoard = function GameBoard(level_number) {
     this.player = this.addSprite('player', // Sprite
                                  Game.width/2, // X
                                  Game.height - Sprites.map['player'].h - 10); // Y
+      
 //this determins where the enemy sprites spawn from?//
     var flock = this.add(new AlienFlock());
     for(var y=0,rows=level.length;y<rows;y++) {
