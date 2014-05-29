@@ -136,9 +136,9 @@ Player.prototype.step = function(dt) {
   if(this.x < 0) this.x = 0;
   if(this.x > Game.width-this.w) this.x = Game.width-this.w;
 
-  this.reloading--; }  
+  this.reloading--; 
 //this changes the amount of missles fired before reloading//
-  if(Game.keys['fire'] && this.reloading <= 3 && this.board.missiles < 1) {
+  if(Game.keys['fire'] && this.reloading <= 3 && this.board.missiles < 5) {
     GameAudio.play('fire');
     this.board.addSprite('missile',                     //this is where i can change the missles player will fire 
                           this.x + this.w/2 - Sprites.map.missile.w/2,
