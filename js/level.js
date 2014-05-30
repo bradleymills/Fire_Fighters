@@ -68,7 +68,9 @@
     'alien3': { sx: 32.9,  sy: 1, w: 17, h: 15.7, cls: Alien, frames: 2 },
     'alien4': { sx: 69,  sy: 3.1, w: 16, h: 14, cls: Alien, frames: 2 },
     'alien5': { sx: 28,  sy: 20, w: 19, h: 17, cls: Alien, frames: 2 },
-     'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
+    'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
+     // 'player': { sx: 113.2,  sy: 29, w: 38.7, h: 25, cls: Player, frames: 2 },//
+      
     'missile': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Missile },
    // 'missile2': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile },//
       
@@ -120,7 +122,7 @@ function loseLifeScreen() {
 
 // this is where i add the you win screen. if the player completes the game
   function winGame() {
-    var screen = new GameScreen("You Saved The Day!","(press space to restart)",
+    var screen = new GameScreen("You Saved The Rain Forrest!","(press space to restart)",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
