@@ -100,10 +100,13 @@ Alien.prototype.fireSometimes = function() {
           
           
                 //This is where i can change the missles that the aliens will fire need to change missle to missle 2//
-        this.board.addSprite('missile',this.x + this.w/2 - Sprites.map.missile.w/2,
+       this.board.addSprite('missile',this.x + this.w/2 - Sprites.map.missile.w/2,
                                       this.y + this.h, 
                                      { dy: 100 });
           
+         // this.board.addSprite('missile2',this.x + this.w/2 - Sprites.map.missile2.w/2,
+                                  //    this.y + this.h, 
+                                  //   { dy: 100 });
           
       }
 }

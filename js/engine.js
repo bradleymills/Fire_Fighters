@@ -76,6 +76,7 @@ var GameBoard = function GameBoard(level_number) {
   this.removed_objs = [];
     //this changes the rate of fire//
   this.missiles = 0;
+ //   this.missiles2 =0;
   this.level = level_number;
   var board = this;
 

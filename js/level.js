@@ -83,7 +83,7 @@
      // 'player': { sx: 113.2,  sy: 29, w: 38.7, h: 25, cls: Player, frames: 2 },//
       
     'missile': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Missile },
-   // 'missile2': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile },//
+   // 'missile2': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile2 },
       
     
   }
