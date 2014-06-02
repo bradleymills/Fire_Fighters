@@ -1,10 +1,10 @@
 var Game = new function() {    
     
-    //this determins the control keys for the game//
+    //this determins the control keys for the game i added an up and down funtion//
   var KEY_CODES = { 37:'left', 39:'right', 32 :'fire', 38:'up', 40:'down'};
   this.keys = {};
 
-    //this function starts the canvas
+    //this function starts the canvas and determins the dimensions and context of the canvas
   this.initialize = function(canvas_dom,level_data,sprite_data,callbacks) {
     this.canvas_elem = $(canvas_dom)[0];
     this.canvas = this.canvas_elem.getContext('2d');
@@ -28,7 +28,7 @@ var Game = new function() {
 
     //this function starts the game 
   this.loadBoard = function(board) { Game.board = board; };
-//this changes the game speed, i changed it from 30 to 12
+//this changes the game speed, i changed it from 30 to 12 to increase excitement and difficulty
   this.loop = function() { 
     Game.board.step(30/1000); 
     Game.board.render(Game.canvas);
@@ -59,7 +59,7 @@ var GameScreen = function GameScreen(text,text2,callback) {
   this.step = function(dt) {
     if(Game.keys['fire'] && callback) callback();
   };
-//this changes the canvas of the game and the fonts used//
+//this changes the canvas of the game and the fonts used, decided to keep the original settings//
   this.render = function(canvas) {
     canvas.clearRect(0,0,Game.width,Game.height);
     canvas.font = "bold 40px arial";
