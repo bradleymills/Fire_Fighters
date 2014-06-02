@@ -1,5 +1,5 @@
 body{
- 
+ /* this changes the background colour of the whole page, changed from black to red to fit theme*/
     background-color: red;
    
     
@@ -9,13 +9,13 @@ body{
   display: block;
 
 }
-
+ /* this determins the area in which the game takes place*/
 #game-wrapper { 
     margin:0 auto; 
     width: 500px;
 
 }
-
+ /* this changes the css of the lifes function allowing to change colour, size font ect*/
 #game-wrapper #lives {
     color: white;
     font-weight: 50;
@@ -25,7 +25,7 @@ body{
     float: left; 
     padding: 10;
 }
-
+/* this changes the css of the score function allowing to change colour, size font ect*/
 #game-wrapper #score {
     color: white;
     font-weight: 50;

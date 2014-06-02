@@ -94,7 +94,7 @@ function loseLife(){
     document.getElementById('lives').innerHTML="LIVES : " + lives; 
   }
 
-
+//this function brings up a screen which tells you how many lifes yoiu have left upon loosing a lifeand what score the player is currently on
 function loseLifeScreen() {
     var screen = new GameScreen("SCORE : "+score+" ","you have "+lives+" lives left",
                                  function() {
@@ -106,7 +106,7 @@ function loseLifeScreen() {
 
 
   
-// this is where i edit the menu text
+// this is where i edit the menu text upon starting a new game
   function startGame() {
     var screen = new GameScreen("Fire Fighter","press space to start",
                                  function() {
@@ -117,7 +117,7 @@ function loseLifeScreen() {
       Game.loop();
     
   }
-// this is where you edit the game over text.
+// this is where you edit the game over text. it will also show the players final score upon losing all lifes
   function endGame() {
     var screen = new GameScreen("Burn Out","(press space to restart)",
                            function() {
