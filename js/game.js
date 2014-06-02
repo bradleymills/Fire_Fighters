@@ -145,9 +145,10 @@ Player.prototype.step = function(dt) {
   if(Game.keys['down']) { if(this.y < 480) { this.y += 100* dt; }
   }
 
+    //this is the container for keeping the sprite in frame
   if(this.x < 0) this.x = 0;
   if(this.x > Game.width-this.w) this.x = Game.width-this.w;
-
+//this changes the height in which the player may go to acts as a container
   if(this.y < 400) this.y = 400;
   if(this.height > Game.height) this.height  = Game.height - this.y;
 
@@ -155,8 +156,9 @@ Player.prototype.step = function(dt) {
   this.reloading--; 
 //this changes the amount of missles fired before reloading//
   if(Game.keys['fire'] && this.reloading <= 2 && this.board.missiles < 4) {
-    GameAudio.play('fire');
-    this.board.addSprite('missile',                     //this is where i can change the missles player will fire 
+    //this changes the audio file used when the fire button is triggered
+      GameAudio.play('fire');
+    this.board.addSprite('missile',                     //this is where i can change the missles player will fire from the sprite sheet
                           this.x + this.w/2 - Sprites.map.missile.w/2,
                           this.y-this.h,
                           { dy: -100, player: true });
