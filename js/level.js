@@ -1,6 +1,8 @@
 // this is where i add and edit the levels of my game.//
   var levelData = { 
     
+      
+      //this changes and adds levels to the game, with the numbers representing the different enemy sprites in the sprite sheet that follows//
       1:  [[0,0,0,0,0,0,0,0,0,0,0],
           [0,0,0,0,0,0,0,0,0,0,0],
           [0,0,0,0,0,0,0,0,0,0,0],
@@ -55,7 +57,6 @@
           [0,0,0,1,1,1,1,1,0,0,0],
           [0,0,0,1,1,1,1,1,0,0,0],
           [0,0,0,1,1,1,1,1,0,0,0]],
-           
     6:    [[0,0,0,0,0,0,0,0,0,0,0],
           [3,0,0,0,0,4,0,0,5,0,0],
           [0,0,0,0,0,0,0,0,0,0,0],
@@ -72,7 +73,7 @@
 
 //added more levels to the game increasing number of enemies per level//
 
-//this is how you incorporate the sprite sheet into the game//
+//this is how you incorporate the sprite sheet into the game determining different aliens by there co ordinates on my spritesheet png file//
   var spriteData = {
     'alien1': { sx: 0,  sy: 0,  w: 13, h: 18, cls: Alien, frames: 2 },
     'alien2': { sx: 2,  sy: 20, w: 12, h: 17, cls: Alien, frames: 2 },
