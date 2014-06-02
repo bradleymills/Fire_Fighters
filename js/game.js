@@ -126,21 +126,22 @@ Player.prototype.die = function() {
   Game.callbacks['loseLife']();
     loseLife();
     loseLifeScreen();
+    //this adds a screen which states that a life has been lost then the game restarts from level 1//
     
-    //this states that if the players lifes are equal to zero the game restarts
+    //this states that if the players lifes are less than or equal to zero the game restarts
     if(lives <=0){
        Game.callbacks['die']();
     lives = 3;
-    
+    //this determins the total ammount of lifes that the player has avaliabel to them(3)//
 };
 
 
 }
-//this changes the controlls for the player//
+//this changes the controlls for the player i have added an up and down function it also changes the amount the player moves when a key is pressed//
 Player.prototype.step = function(dt) {
   if(Game.keys['left']) { this.x -= 100 * dt; }
   if(Game.keys['right']) { this.x += 100 * dt; }
-  if(Game.keys['up']) { this.y -= 100* dt; }
+  if(Game.keys['up']) { this.y -= 80* dt; }
   if(Game.keys['down']) { if(this.y < 480) { this.y += 100* dt; }
   }
 
