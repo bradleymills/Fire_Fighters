@@ -75,7 +75,8 @@ var GameScreen = function GameScreen(text,text2,callback) {
 var GameBoard = function GameBoard(level_number) {
   this.removed_objs = [];
     //this changes the rate of fire//
-  this.missiles = 0;
+  //this.missiles = 0;
+    this.water = 0;
  //   this.missiles2 =0;
   this.level = level_number;
   var board = this;
