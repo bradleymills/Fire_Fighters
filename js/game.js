@@ -152,7 +152,7 @@ Player.prototype.step = function(dt) {
   if(this.y < 400) this.y = 400;
   if(this.height > Game.height) this.height  = Game.height - this.y;
 
-//this is where i have added a differnt type of missile for the player to use in the game
+//this is where i have added a differnt type of missle to the game
     
     
   this.reloading--; 

@@ -83,7 +83,7 @@
     'player': { sx: 0,  sy: 37, w: 27, h: 15.8, cls: Player, frames: 2 },
      // 'player': { sx: 113.2,  sy: 29, w: 38.7, h: 25, cls: Player, frames: 2 },//
       
-    'Water': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Water },
+    'water': { sx: 2.2,  sy: 89, w: 4.8,  h: 9, cls: Water },
     'missile': { sx: 8,  sy: 89, w: 4.8,  h: 9, cls: Missile },
       
     
