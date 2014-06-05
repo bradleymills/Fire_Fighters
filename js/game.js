@@ -1,4 +1,5 @@
 
+
 //this variable determins the score as 0 for starting the game
 var score = 0;
 
