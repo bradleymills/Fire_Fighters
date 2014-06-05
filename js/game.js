@@ -1,5 +1,4 @@
 
-
 //this variable determins the score as 0 for starting the game
 var score = 0;
 
@@ -7,8 +6,8 @@ var score = 0;
 
 var lives = 3;
 
-//coment test
-//comment test
+
+
 
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
@@ -152,51 +151,21 @@ Player.prototype.step = function(dt) {
   if(this.y < 400) this.y = 400;
   if(this.height > Game.height) this.height  = Game.height - this.y;
 
-//this is where i have added a differnt type of missle to the game for my player to fire //currently bugged
-    
-    
+
   this.reloading--; 
-//this changes the amount of waters fired before reloading//
-  if(Game.keys['fire'] && this.reloading <= 2 && this.board.waters < 4) {
+//this changes the amount of missles fired before reloading//
+  if(Game.keys['fire'] && this.reloading <= 2 && this.board.missiles < 4) {
     //this changes the audio file used when the fire button is triggered
       GameAudio.play('fire');
-    this.board.addSprite('water',                     //this is where i can change the missles player will fire from the sprite sheet
-                          this.x + this.w/2 - Sprites.map.water.w/2,
+    this.board.addSprite('missile',                     //this is where i can change the missles player will fire from the sprite sheet
+                          this.x + this.w/2 - Sprites.map.missile.w/2,
                           this.y-this.h,
                           { dy: -100, player: true });
-    this.board.waters++;
+    this.board.missiles++;
     this.reloading = 10;
   }
   return true;
 }
-
-
-
-var Water = function Water(opts) {
-    this.dy = opts.dy;
-    this.player = opts.player;
- }
- 
- Water.prototype.draw = function(canvas) {
-    Sprites.draw(canvas,'water',this.x,this.y);
- }
- 
- Water.prototype.step = function(dt) {
-    this.y += this.dy * dt;
- 
-    var enemy = this.board.collide(this);
-    if(enemy) { 
-      enemy.die();
-      return false;
-    }
-    return (this.y < 0 || this.y > Game.height) ? false : true;
- }
- 
- Water.prototype.die = function() {
-   if(this.player) this.board.waters--;
-   if(this.board.waters < 0) this.board.waters=0;
-   this.board.remove(this);
- }
 
 //this variable declairs the funtion of the missle
 var Missile = function Missile(opts) {
