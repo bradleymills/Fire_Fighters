@@ -8,7 +8,7 @@ var score = 0;
 var lives = 3;
 
 
-
+//comment test
 
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
